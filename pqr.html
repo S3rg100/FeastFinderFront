@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/estilosPqr.css">
+    <title>Solicitud PQR</title>
+</head>
+<body>
+    <div class="contenedor">
+        <h1 id="principal">
+            <span class="mitad-izquierda">Feast</span>
+            <span class="mitad-derecha">Finder</span>
+        </h1>
+        <form class="formulario" id="loginForm" action="/guardar_cliente" method="post" onsubmit="return guardarPqr(event)">
+            <label id="label1" for="correo">Correo electrónico</label>
+            <input type="email" id="correo" class="texto" name="correo" required><br><br>
+    
+            <label id="label2" for="pqr">Descripción del problema</label>
+            <input type="text" id="pqr" class="texto" name="pqr" required><br><br>
+    
+            <input type="submit" id="botonI" value="Enviar">
+        </form>
+    </div>
+    <script>
+        function guardarPqr(event) {
+            event.preventDefault(); // Evita que el formulario se envíe por defecto
+    
+            // Obtiene los valores de los campos del formulario
+            const correo = document.getElementById('correo').value;
+            const pqr = document.getElementById('pqr').value;
+    
+            if (correo && pqr) {
+                alert('Se envió el formulario satisfactoriamente');
+                window.location.href = "index.html";
+                return true; // Se envió el formulario y se redirige
+            } else {
+                // Si falta algún campo, muestra un mensaje de error
+                alert('Por favor, completa todos los campos.');
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/estilosMisreservas.css">
+    <title>Tus reservas</title>
+</head>
+<body>
+    <div class="contenedor">
+        <div>
+            <a href="clientes.html" type="boton" class="boton">Salir</a>
+            <h1 id="titulo">TUS RESERVAS</h1>
+        </div>
+        <div id="reservas">
+            <div id="detallesReservas"></div>
+        </div>
+    </div>
+
+    <script>
+        // Simulacion
+        const clienteReservas = [
+            { id: 1, restaurante: 'Cantina la 15', fecha: '2024-05-10', hora: '19:00' },
+            { id: 2, restaurante: 'Todo es color di Rosa', fecha: '2024-05-12', hora: '18:30' },
+            { id: 3, restaurante: 'Pizzardi Artigianale', fecha: '2024-05-15', hora: '20:15' }
+        ];
+
+        // Mostrar los detalles de las reservas
+        const detallesReservas = clienteReservas.map(reserva => {
+            return `<p>Reserva ID: ${reserva.id}</p>
+                    <p>Restaurante: ${reserva.restaurante}</p>
+                    <p>Fecha: ${reserva.fecha}</p>
+                    <p>Hora: ${reserva.hora}</p>
+                    <hr>`;
+        }).join('');
+        document.getElementById('detallesReservas').innerHTML = detallesReservas;
+    </script>
+</body>
+</html>

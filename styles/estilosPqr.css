@@ -1,0 +1,138 @@
+body {
+    background-color: white;
+}
+
+.contenedor {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 700px;
+    height: 70vh;
+    background-color: #C6C5CE;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#principal,
+#texto1 {
+    color: white;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 10px;
+    padding-top: 40px;
+}
+
+.mitad-izquierda {
+    color: white;
+    font: bold 14px;
+}
+
+.mitad-derecha {
+    color: orange;
+    font: bold 14px;
+}
+
+#loginForm {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    width: 80%;
+    max-width: 700px;
+}
+
+#botonI {
+    padding: 20px;
+    background-color: whitesmoke;
+    color: black;
+    text-decoration: none;
+    border: 1px solid white;
+    border-radius: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+a {
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    display: inline-block;
+    padding: 10px;
+    background-color: #FFC343;
+    color: black;
+    text-decoration: none;
+    border: 1px solid white;
+    border-radius: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.texto {
+    border: 1px solid white;
+    border-radius: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 10px;
+    background-color: white;
+    color: black;
+}
+
+#label1,
+#label2 {
+    position: absolute;
+    color: #999;
+    pointer-events: none;
+}
+
+#label1 {
+    top: 10px;
+    left: 210px;
+}
+
+#label2 {
+    top: 65px;
+    left: 180px;
+}
+
+#l1,
+#l2,
+#l5,
+#l6 {
+    width: 50%;
+    float: left;
+}
+
+.formulario {
+    width: 600px;
+    max-width: 700px;
+    text-align: center;
+}
+
+.textoL {
+    position: absolute;
+    color: #999;
+    pointer-events: none;
+}
+
+#botonI1 {
+    padding: 20px;
+    background-color: #FFC343;
+    color: black;
+    text-decoration: none;
+    border: 1px solid white;
+    border-radius: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#tipoU {
+    width: 50%;
+    float: left;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}

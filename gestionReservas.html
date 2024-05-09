@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/estiloGestion.css">
+    <title>Sistema de Reservas</title>
+</head>
+<body>
+    <div class="contenedor">
+        <div class="cabeza">
+            <a href="restaurantes.html" type="boton" class="boton">Salir</a>
+            <h1 id="titulo">Reservas del Restaurante</h1>
+        </div>
+
+         <!-- Mostrar reserva -->
+        <div id="reservas" class="muestra">
+            <h2>Reservas</h2>
+            <ul id="listaReservas"></ul>
+        </div>
+
+        <!-- Cancelar reserva -->
+        <div id="cancelarReserva" class="muestra">
+            <h2>Cancelar Reserva</h2>
+            <input type="number" id="inputIdReserva" placeholder="ID de Reserva">
+            <button onclick="cancelarReserva()">Cancelar</button>
+            <p id="mensajeCancelacion"></p>
+        </div>
+
+        <!-- Buscar cliente -->
+        <div id="buscarCliente" class="muestra">
+            <h2>Buscar Cliente</h2>
+            <input type="number" id="inputIdCliente" placeholder="ID de Cliente">
+            <button onclick="buscarCliente()">Buscar</button>
+            <p id="mensajeCliente"></p>
+            <ul id="reservasCliente"></ul>
+        </div>
+    </div>
+    <!--Todo esto se debe modificar para la base de datos-->
+    <script>
+        let reservas = [
+            { id: 1, id_cliente: 1, restaurante: 'Cantina la 15', fecha: '2024-05-10', hora: '19:00' },
+            { id: 2, id_cliente: 2, restaurante: 'Todo es color di Rosa', fecha: '2024-05-12', hora: '18:30' },
+            { id: 3, id_cliente: 1, restaurante: 'Pizzardi Artigianale', fecha: '2024-05-15', hora: '20:15' }
+        ];
+
+        let clientes = [
+            { id: 1, nombre: 'Juan', apellido: 'Perez', email: 'juan@example.com', telefono: '123456789' },
+            { id: 2, nombre: 'Maria', apellido: 'Garcia', email: 'maria@example.com', telefono: '987654321' }
+        ];
+
+        // Función para mostrar reservas
+        function mostrarReservas() {
+            const listaReservas = document.getElementById('listaReservas');
+            listaReservas.innerHTML = ''; // Limpiar lista antes de mostrar
+
+            reservas.forEach(reserva => {
+                const itemReserva = document.createElement('li');
+                itemReserva.textContent = `ID: ${reserva.id}, Restaurante: ${reserva.restaurante}, Fecha: ${reserva.fecha}, Hora: ${reserva.hora}`;
+                listaReservas.appendChild(itemReserva);
+            });
+        }
+
+        // Función para cancelar reserva
+        function cancelarReserva() {
+            const idReserva = parseInt(document.getElementById('inputIdReserva').value);
+
+            const reservaIndex = reservas.findIndex(reserva => reserva.id === idReserva);
+            if (reservaIndex !== -1) {
+                reservas.splice(reservaIndex, 1);
+                document.getElementById('mensajeCancelacion').textContent = 'Reserva cancelada con éxito.';
+                mostrarReservas(); // Actualizar lista de reservas
+            } else {
+                document.getElementById('mensajeCancelacion').textContent = 'No se encontró una reserva con ese ID.';
+            }
+        }
+        // Función para buscar cliente por ID y mostrar sus reservas
+        function buscarCliente() {
+            const idCliente = parseInt(document.getElementById('inputIdCliente').value);
+
+            const cliente = clientes.find(cliente => cliente.id === idCliente);
+            const reservasCliente = reservas.filter(reserva => reserva.id_cliente === idCliente);
+
+            const mensajeCliente = document.getElementById('mensajeCliente');
+            const listaReservasCliente = document.getElementById('reservasCliente');
+
+            mensajeCliente.textContent = ''; // Limpiar mensaje anterior
+
+            if (cliente) {
+                if (reservasCliente.length > 0) {
+                    mensajeCliente.textContent = `Cliente: ${cliente.nombre} ${cliente.apellido}, Email: ${cliente.email}, Teléfono: ${cliente.telefono}`;
+                    listaReservasCliente.innerHTML = ''; // Limpiar lista de reservas anterior
+
+                    reservasCliente.forEach(reserva => {
+                        const itemReservaCliente = document.createElement('li');
+                        itemReservaCliente.textContent = `ID: ${reserva.id}, Restaurante: ${reserva.restaurante}, Fecha: ${reserva.fecha}, Hora: ${reserva.hora}`;
+                        listaReservasCliente.appendChild(itemReservaCliente);
+                    });
+                } else {
+                    mensajeCliente.textContent = `El cliente ${cliente.nombre} ${cliente.apellido} no tiene reservas.`;
+                    listaReservasCliente.innerHTML = ''; // Limpiar lista de reservas
+                }
+            } else {
+                mensajeCliente.textContent = 'No se encontró un cliente con ese ID.';
+                listaReservasCliente.innerHTML = ''; // Limpiar lista de reservas
+            }
+        }
+
+        // Mostrar las reservas al cargar la página
+        mostrarReservas();
+    </script>
+</body>
+</html>

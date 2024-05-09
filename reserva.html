@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/estiloReserva.css">
+    <title>Reserva</title>
+</head>
+<body>
+    <div class="contenedor">
+       <div class="formulario">
+        <h1>Ingresa datos de tu reserva</h1>
+        <form class="cliente-formulario" action="/guardar_cliente" method="post" onsubmit="return guardarCliente(event)">
+
+            <div>
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+            </div>
+
+            <div>
+                <label for="apellidos">Apellidos:</label>
+                <input type="text" id="apellidos" name="apellidos" required>
+            </div>
+
+            <div>
+                <label for="ID">Numero de documento:</label>
+                <input type="text" id="ID" name="ID" required>
+            </div>
+
+            <div>
+                <label for="email">Correo electrónico:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div>
+                <label for="telefono">Teléfono:</label>
+                <input type="tel" id="telefono" name="telefono" required>
+            </div>
+
+            <div>
+                <label for="paises">Selecciona una ciudad:</label>
+                <select id="paises" onchange="actualizarCiudades()">
+                    <option value="">Selecciona una ciudad...</option>
+                    <option value="Bogota">Bogota</option>
+                    <option value="Medellin">Medellin</option>
+                    <option value="Cartagena">Cartagena</option>
+                </select>
+            </div>
+
+            <div>          
+                <label for="ciudades">Selecciona un restaurante:</label>
+                <select id="ciudades">
+                    <option value="">Selecciona una ciudad primero...</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="fecha">Fecha de cita:</label>
+                <input type="date" id="fecha" name="fecha" required>
+            </div>
+
+            <div>
+                <label for="hora">Hora de cita:</label>
+                <input type="time" id="hora" name="hora" required>
+            </div>
+
+            <button type="submit" id="enviar">Reservar</button>
+        </form>
+       </div>
+    </div>
+
+    <script>
+        function actualizarCiudades() {
+            const paisSeleccionado = document.getElementById('paises').value;
+            const ciudadesSelect = document.getElementById('ciudades');
+
+            // Limpia las opciones anteriores
+            ciudadesSelect.innerHTML = '';
+
+            if (paisSeleccionado === 'Bogota') {
+                agregarCiudad('Cantina la 15');
+                agregarCiudad('Todo es color di Rosa');
+                agregarCiudad('Pizzardi Artigianale');
+            } else if (paisSeleccionado === 'Medellin') {
+                agregarCiudad('Kampanas cocinas del mundo');
+                agregarCiudad('Maximo Marea Mediterraneo');
+                agregarCiudad('La pampa parrilla envigado');
+            } else if (paisSeleccionado === 'Cartagena') {
+                agregarCiudad('Inkanto Prime Cartagena');
+                agregarCiudad('Lucena Rooftop');
+                agregarCiudad('San Nicolas Restaurante');
+            } else {
+                // Si no se selecciona ningún país, muestra un mensaje predeterminado
+                const option = document.createElement('option');
+                option.text = 'Selecciona un país primero...';
+                ciudadesSelect.appendChild(option);
+            }
+        }
+
+        function agregarCiudad(nombreCiudad) {
+            const ciudadesSelect = document.getElementById('ciudades');
+            const option = document.createElement('option');
+            option.text = nombreCiudad;
+            ciudadesSelect.appendChild(option);
+        }
+
+        function guardarCliente(event) {
+            event.preventDefault(); // Evita que el formulario se envíe por defecto
+
+            // Obtiene los valores de los campos del formulario
+            const nombre = document.getElementById('nombre').value;
+            const apellidos = document.getElementById('apellidos').value;
+            const ID = document.getElementById('ID').value;
+            const email = document.getElementById('email').value;
+            const telefono = document.getElementById('telefono').value;
+            const fecha = document.getElementById('fecha').value;
+            const hora = document.getElementById('hora').value;
+
+            if (nombre && apellidos && ID && email && telefono && fecha && hora) {
+                alert('Se envió el formulario satisfactoriamente');
+                window.location.href = "misReservas.html"; 
+                return true; // Se envió el formulario y se redirige
+            } else {
+                // Si falta algún campo, muestra un mensaje de error
+                alert('Por favor, completa todos los campos.');
+                return false; 
+            }
+        }
+    </script>
+</body>
+</html>

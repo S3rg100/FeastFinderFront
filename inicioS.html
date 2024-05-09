@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/estiloInfo.css">
+    <title>Inicio de sesion</title>
+</head>
+<body>
+    <div class="contenedor">
+        <h1 id="principal">
+            <span class="mitad-izquierda">Feast</span>
+            <span class="mitad-derecha">Finder</span>
+          </h1>
+        <form class="formulario" id="loginForm">
+          <label id="label1" for="username" >Nombre de usuario</label>
+          <input type="text" id="username" class="texto" name="username" required><br><br>
+      
+          <label id="label2" for="password" >Contraseña</label>
+          <input type="password" id="password" class="texto" name="password" required><br><br>
+      
+            <input type="submit" id="botonI" value="Iniciar sesión">
+
+        </form>
+        <div id="boton1">
+            <a href="registro.html" type="boton" class="boton">Registrarse</a>
+        </div>
+      </div>
+      <script>
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+          event.preventDefault(); // Evita el envío predeterminado del formulario
+        
+          // Forma correcta de acceder a los valores de los elementos de entrada:
+          var username = document.getElementById("username").value;
+          var password = document.getElementById("password").value;
+        
+          // Ejemplo de verificación simple del lado del cliente (considere también la validación del lado del servidor):
+          if (username === 'lau' && password === '1234') {
+            window.location.href = "clientes.html"; // Redirección tras un inicio de sesión exitoso
+          } if (username === 'david' && password === '1234') {
+            window.location.href = "restaurantes.html"; // Redirección tras un inicio de sesión exitoso
+          }else {
+            alert("Nombre de usuario o contraseña incorrectos");
+          }
+        });
+        </script>
+</body>
+</html>

@@ -1,0 +1,137 @@
+body{
+    background-color: white;
+}
+
+.contenedor{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 700px; /* Opcional: limita el ancho máximo */
+    height: 70vh; /* Usa vh para hacerlo relativo al tamaño de la ventana */
+    background-color: #C6C5CE;
+    border-radius: 10px; /* Borde redondeado */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra */
+}
+
+#principal, #texto1{
+    color: white;
+}
+
+#principal{
+    padding: 10px;
+    text-align: center;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    padding-top: 40px;
+}
+
+.mitad-izquierda {
+    color: white; /* Color para la mitad izquierda */
+    font: bold 14px;
+}
+  
+.mitad-derecha {
+    color: orange; /* Color para la mitad derecha */
+    font: bold 14px;
+}
+
+#loginForm{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#botonI{
+    padding: 20px 20px;
+    background-color:whitesmoke;
+    color: black;
+    text-decoration: none; /* Elimina el subrayado del enlace */
+    border: 1px solid white;
+    border-radius: 10px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+a{
+    position: fixed;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    display: inline-block;
+    padding: 10px 10px;
+    background-color:#FFC343;
+    color: black;
+    text-decoration: none; /* Elimina el subrayado del enlace */
+    border: 1px solid white;
+    border-radius: 10px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.texto{
+    border: 1px solid white;
+    border-radius: 10px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    padding: 10px 10px;
+    background-color:white;
+    color: black;
+}
+
+#label1{
+    position: absolute;
+    top: 10px;
+    left: 220px;
+    color: #999; 
+    pointer-events: none; /* Evita que el label interfiera con la interacción del input */
+}
+
+#label2{
+    position: absolute;
+    top: 65px;
+    left: 250px;
+    color: #999; 
+    pointer-events: none; /* Evita que el label interfiera con la interacción del input */
+}
+
+#l1, #l2 {
+    width: 50%; /* O ajusta el ancho según tus necesidades */
+    float: left;
+}
+
+#l5, #l6 {
+    width: 50%; /* O ajusta el ancho según tus necesidades */
+    float: left;
+}
+
+.formulario{
+    width: 600px;
+    max-width: 700px; /* Opcional: limita el ancho máximo */
+}
+
+.textoL{
+    position: absolute;
+    color: #999;
+    pointer-events: none;
+}
+
+#botonI1{
+    padding: 20px 20px;
+    background-color:#FFC343;
+    color: black;
+    text-decoration: none; /* Elimina el subrayado del enlace */
+    border: 1px solid white;
+    border-radius: 10px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#tipoU{
+    width: 50%; /* O ajusta el ancho según tus necesidades */
+    float: left;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
