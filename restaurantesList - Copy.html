@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurantes</title>
+    <style>
+        body {
+            background-color: #f4f4f4;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        main {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+        }
+        
+        .restaurante {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+            max-width: 300px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+        
+        .restaurante:hover {
+            transform: translateY(-5px);
+        }
+        
+        .restaurante img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+        
+        .restaurante h2 {
+            text-align: center;
+            margin: 10px 0;
+        }
+        
+        .boton {
+            display: block;
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Restaurantes</h1>
+        <label for="ciudad">¿En qué ciudad te encuentras?</label>
+        <select id="ciudad" onchange="mostrarRestaurantes()">
+            <option value="bogota">Bogotá</option>
+            <option value="medellin">Medellín</option>
+            <option value="cartagena">Cartagena</option>
+        </select>
+    </header>
+    
+    <main id="restaurantes">
+        <!-- Contenido de los restaurantes se añadirá dinámicamente aquí -->
+    </main>
+
+    <script>
+        function mostrarRestaurantes() {
+            var ciudad = document.getElementById("ciudad").value;
+            var restaurantes = document.getElementById("restaurantes");
+            restaurantes.innerHTML = ''; // Limpiar contenido anterior
+
+            if (ciudad === "bogota") {
+                // Agregar restaurantes de Bogotá
+                agregarRestaurante("Cantina La 15", "images/cantina.jpeg", "cantina.html");
+                agregarRestaurante("Todo es Color di Rosa", "images/todoescolordirosa.jpg", "todoescolordirosa.html");
+                agregarRestaurante("Pizzardi Artigianale", "images/pizzardiartigianale.jpeg", "pizzardiartigianale.html");
+            } else if (ciudad === "medellin") {
+                // Agregar restaurantes de Medellín
+                agregarRestaurante("Kampanas Cocinas Del Mundo", "images/KampanasMed.jpeg", "kampanas.html");
+                agregarRestaurante("Máximo marea Mediterránea", "images/maximomareamediterranea.jpg", "maximo.html");
+                agregarRestaurante("La Pampa Parrilla Envigado", "images/lapampaparrillaenvigado.jpg", "pampa.html");
+            } else if (ciudad === "cartagena") {
+                // Agregar restaurantes de Cartagena
+                agregarRestaurante("Inkanto prime Cartagena", "images/inkantoprimecartagena.jpg", "inkanto.html");
+                agregarRestaurante("Lucena Rooftop", "images/lucenarooftop.jpg", "lucena.html");
+                agregarRestaurante("San Nicolás restaurante", "images/sannicolasrestaurante.jpg", "sanNicolas.html");
+            }
+        }
+
+        function agregarRestaurante(nombre, imagen, enlace) {
+            var restauranteHTML = `
+                <div class="restaurante">
+                    <img src="${imagen}" alt="${nombre}">
+                    <h2>${nombre}</h2>
+                    <a href="${enlace}" class="boton">Ver detalles</a>
+                </div>
+            `;
+            document.getElementById("restaurantes").innerHTML += restauranteHTML;
+        }
+
+        // Mostrar restaurantes al cargar la página
+        mostrarRestaurantes();
+    </script>
+</body>
+</html>

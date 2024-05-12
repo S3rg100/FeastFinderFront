@@ -1,0 +1,63 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa; /* Color de fondo gris claro */
+}
+
+.contenedor {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center; /* Centrar contenido */
+}
+
+header {
+    margin-bottom: 1000px; /* Espacio entre el encabezado y el contenido */
+}
+
+.logo img {
+    width: 200px; /* Ajusta el tamaño del logo */
+    border-radius: 50%; /* Hace que el logo sea circular */
+    margin-bottom: -20px;
+}
+
+.inicio {
+    background-color: #fff; /* Fondo blanco */
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+h1 {
+    font-size: 36px; /* Tamaño de fuente grande para el título */
+    color: #333; /* Color de texto oscuro */
+    margin-bottom: 1px; /* Espacio entre el título y el párrafo */
+}
+
+p {
+    font-size: 18px; /* Tamaño de fuente para el texto secundario */
+    color: #666; /* Color de texto gris */
+    margin-bottom: 100px; /* Espacio entre el párrafo y los botones */
+}
+
+.botones {
+    display: flex;
+    justify-content: center; /* Centrar los botones horizontalmente */
+    margin-top:60px; /* Separación entre los botones y el párrafo */
+}
+
+.boton {
+    padding: 15px 30px;
+    margin: 10px; /* Separación entre los botones */
+    background-color: #ff6600; /* Color naranja */
+    color: #fff; /* Color de texto blanco */
+    text-decoration: none;
+    border-radius: 25px; /* Bordes redondeados */
+    font-size: 18px; /* Tamaño de fuente */
+    transition: background-color 0.3s; /* Transición suave al pasar el ratón */
+}
+
+.boton:hover {
+    background-color: #ff4d00; /* Color naranja más oscuro al pasar el ratón */
+}

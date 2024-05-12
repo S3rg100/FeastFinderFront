@@ -8,10 +8,10 @@
 </head>
 <body>
     <div class="contenedor">
-        <div>
-            <a href="clientes.html" type="boton" class="boton">Salir</a>
+        <header>
             <h1 id="titulo">TUS RESERVAS</h1>
-        </div>
+            <a href="clientes.html" class="boton">Salir</a>
+        </header>
         <div id="reservas">
             <div id="detallesReservas"></div>
         </div>
@@ -27,11 +27,12 @@
 
         // Mostrar los detalles de las reservas
         const detallesReservas = clienteReservas.map(reserva => {
-            return `<p>Reserva ID: ${reserva.id}</p>
-                    <p>Restaurante: ${reserva.restaurante}</p>
-                    <p>Fecha: ${reserva.fecha}</p>
-                    <p>Hora: ${reserva.hora}</p>
-                    <hr>`;
+            return `<div class="reserva">
+                        <p class="reserva-id">Reserva ID: ${reserva.id}</p>
+                        <p class="reserva-restaurante">Restaurante: ${reserva.restaurante}</p>
+                        <p class="reserva-fecha">Fecha: ${reserva.fecha}</p>
+                        <p class="reserva-hora">Hora: ${reserva.hora}</p>
+                    </div>`;
         }).join('');
         document.getElementById('detallesReservas').innerHTML = detallesReservas;
     </script>

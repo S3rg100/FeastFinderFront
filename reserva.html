@@ -4,69 +4,73 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/estiloReserva.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <title>Reserva</title>
 </head>
 <body>
     <div class="contenedor">
-       <div class="formulario">
-        <h1>Ingresa datos de tu reserva</h1>
-        <form class="cliente-formulario" action="/guardar_cliente" method="post" onsubmit="return guardarCliente(event)">
+        <div class="formulario">
+            <h1><i class="fas fa-calendar-alt"></i> Ingresa datos de tu reserva</h1>
+            <form class="cliente-formulario" action="/guardar_cliente" method="post" onsubmit="return guardarCliente(event)">
 
-            <div>
-                <label for="nombre">Nombre:</label>
-                <input type="text" id="nombre" name="nombre" required>
-            </div>
+                <div>
+                    <label for="nombre"><i class="fas fa-user"></i> Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                </div>
 
-            <div>
-                <label for="apellidos">Apellidos:</label>
-                <input type="text" id="apellidos" name="apellidos" required>
-            </div>
+                <div>
+                    <label for="apellidos"><i class="fas fa-user"></i> Apellidos:</label>
+                    <input type="text" id="apellidos" name="apellidos" required>
+                </div>
 
-            <div>
-                <label for="ID">Numero de documento:</label>
-                <input type="text" id="ID" name="ID" required>
-            </div>
+                <div>
+                    <label for="ID"><i class="fas fa-id-card"></i> Numero de documento:</label>
+                    <input type="text" id="ID" name="ID" required>
+                </div>
 
-            <div>
-                <label for="email">Correo electrónico:</label>
-                <input type="email" id="email" name="email" required>
-            </div>
+                <div>
+                    <label for="email"><i class="fas fa-envelope"></i> Correo electrónico:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
 
-            <div>
-                <label for="telefono">Teléfono:</label>
-                <input type="tel" id="telefono" name="telefono" required>
-            </div>
+                <div>
+                    <label for="telefono"><i class="fas fa-phone-alt"></i> Teléfono:</label>
+                    <input type="tel" id="telefono" name="telefono" required>
+                </div>
 
-            <div>
-                <label for="paises">Selecciona una ciudad:</label>
-                <select id="paises" onchange="actualizarCiudades()">
-                    <option value="">Selecciona una ciudad...</option>
-                    <option value="Bogota">Bogota</option>
-                    <option value="Medellin">Medellin</option>
-                    <option value="Cartagena">Cartagena</option>
-                </select>
-            </div>
+                <div>
+                    <label for="paises"><i class="fas fa-globe"></i> Selecciona una ciudad:</label>
+                    <select id="paises" onchange="actualizarCiudades()">
+                        <option value="">Selecciona una ciudad...</option>
+                        <option value="Bogota">Bogota</option>
+                        <option value="Medellin">Medellin</option>
+                        <option value="Cartagena">Cartagena</option>
+                    </select>
+                </div>
 
-            <div>          
-                <label for="ciudades">Selecciona un restaurante:</label>
-                <select id="ciudades">
-                    <option value="">Selecciona una ciudad primero...</option>
-                </select>
-            </div>
+                <div>          
+                    <label for="ciudades"><i class="fas fa-utensils"></i> Selecciona un restaurante:</label>
+                    <select id="ciudades">
+                        <option value="">Selecciona una ciudad primero...</option>
+                    </select>
+                </div>
 
-            <div>
-                <label for="fecha">Fecha de cita:</label>
-                <input type="date" id="fecha" name="fecha" required>
-            </div>
+                <div>
+                    <label for="fecha"><i class="fas fa-calendar"></i> Fecha de cita:</label>
+                    <input type="date" id="fecha" name="fecha" required>
+                </div>
 
-            <div>
-                <label for="hora">Hora de cita:</label>
-                <input type="time" id="hora" name="hora" required>
-            </div>
+                <div>
+                    <label for="hora"><i class="fas fa-clock"></i> Hora de cita:</label>
+                    <input type="time" id="hora" name="hora" required>
+                </div>
 
-            <button type="submit" id="enviar">Reservar</button>
-        </form>
-       </div>
+                <div class>
+                    <button type="submit" id="enviar"><i class="fas fa-check"></i> Reservar</button>
+                    <a href="./restaurantesList.html" id="volver"><button type="button"><i class="fas fa-arrow-left"></i> Volver</button></a>
+                </div>
+            </form>
+        </div>
     </div>
 
     <script>

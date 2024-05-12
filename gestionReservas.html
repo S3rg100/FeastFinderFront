@@ -3,42 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/estiloGestion.css">
+    <link rel="stylesheet" href="styles/estiloGestionReservas.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <title>Sistema de Reservas</title>
 </head>
 <body>
     <div class="contenedor">
-        <div class="cabeza">
-            <a href="restaurantes.html" type="boton" class="boton">Salir</a>
-            <h1 id="titulo">Reservas del Restaurante</h1>
-        </div>
+        <header>
+            <a href="restaurantes.html" class="boton"><i class="fas fa-sign-out-alt"></i> Salir</a>
+            <h1 id="titulo">Gestión de Reservas</h1>
+        </header>
 
-         <!-- Mostrar reserva -->
-        <div id="reservas" class="muestra">
-            <h2>Reservas</h2>
+        <section id="reservas" class="seccion">
+            <h2><i class="fas fa-list"></i> Reservas</h2>
             <ul id="listaReservas"></ul>
-        </div>
+        </section>
 
-        <!-- Cancelar reserva -->
-        <div id="cancelarReserva" class="muestra">
-            <h2>Cancelar Reserva</h2>
+        <section id="cancelarReserva" class="seccion">
+            <h2><i class="fas fa-times"></i> Cancelar Reserva</h2>
             <input type="number" id="inputIdReserva" placeholder="ID de Reserva">
-            <button onclick="cancelarReserva()">Cancelar</button>
+            <button onclick="cancelarReserva()"><i class="fas fa-trash-alt"></i> Cancelar</button>
             <p id="mensajeCancelacion"></p>
-        </div>
+        </section>
 
-        <!-- Buscar cliente -->
-        <div id="buscarCliente" class="muestra">
-            <h2>Buscar Cliente</h2>
+        <section id="buscarCliente" class="seccion">
+            <h2><i class="fas fa-search"></i> Buscar Cliente</h2>
             <input type="number" id="inputIdCliente" placeholder="ID de Cliente">
-            <button onclick="buscarCliente()">Buscar</button>
+            <button onclick="buscarCliente()"><i class="fas fa-search"></i> Buscar</button>
             <p id="mensajeCliente"></p>
             <ul id="reservasCliente"></ul>
-        </div>
+        </section>
     </div>
-    <!--Todo esto se debe modificar para la base de datos-->
+
     <script>
-        let reservas = [
+         let reservas = [
             { id: 1, id_cliente: 1, restaurante: 'Cantina la 15', fecha: '2024-05-10', hora: '19:00' },
             { id: 2, id_cliente: 2, restaurante: 'Todo es color di Rosa', fecha: '2024-05-12', hora: '18:30' },
             { id: 3, id_cliente: 1, restaurante: 'Pizzardi Artigianale', fecha: '2024-05-15', hora: '20:15' }

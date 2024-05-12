@@ -1,54 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/styles/estiloInfo.css">
-    <title>Registro</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/styles/estilosRegistro.css" />
+    <title>Registro De Usuario</title>
+  </head>
+  <body>
     <div class="contenedor">
-        <h1 id="principal">
-            <span class="mitad-izquierda">Feast</span>
-            <span class="mitad-derecha">Finder</span>
-          </h1>
-        <form class="formulario" id="loginForm">
-            <div id="datos">
-                <div class="grupo" id="l1">
-                    <label id="label7" class="textoL" for="name" >Nombre</label>
-                    <input type="text" id="username" class="texto" name="username" required><br><br>
-                </div>
-                <div class="grupo" id="l2"> 
-                    <label id="label8" class="textoL" for="lastName" >Apellido</label>
-                    <input type="text" id="lastName" class="texto" name="password" required><br><br>
-                </div>
-            </div>
-
-            <div class="grupo" id="l3">
-                <label id="label3" class="textoL" for="correo" >Correo electronico</label>
-                <input type="email" id="username" class="texto" name="username" required><br><br>
-            </div>
-        
-            <div class="grupo" id="l4">
-                <label id="label4" class="textoL" for="id" >Numero de documento</label>
-                <input type="text" id="lastName" class="texto" name="password" required><br><br>
-            </div>
-
-            <div id="ingreso">
-                
-                <div class="grupo" id="l5"> 
-                    <label id="label5" class="textoL" for="username" >Usuario</label>
-                    <input type="text" id="username" class="texto" name="username" required><br><br>
-                </div>
-            
-                <div class="grupo" id="l6">
-                    <label id="label6" class="textoL" for="password" >Contraseña</label>
-                    <input type="password" id="password" class="texto" name="password" required><br><br>
-                </div>
-        
-            </div>
-            <input type="submit" id="botonI1" value="Registrarse">
-        </form>
-      </div>
-</body>
+      <header>
+        <h1 id="logo">
+          <span class="mitad-izquierda">Feast</span>
+          <span class="mitad-derecha">Finder</span>
+        </h1>
+        <h2>Regístrate y descubre nuevos sabores</h2>
+      </header>
+      <form class="formulario" id="registroForm">
+        <div class="grupo">
+          <label for="nombre">Nombre</label>
+          <input type="text" id="nombre" name="nombre" required />
+        </div>
+        <div class="grupo">
+          <label for="apellido">Apellido</label>
+          <input type="text" id="apellido" name="apellido" required />
+        </div>
+        <div class="grupo">
+          <label for="correoElectronico">Correo electrónico</label>
+          <input type="email" id="correoElectronico" name="correoElectronico" required />
+        </div>
+        <div class="grupo">
+          <label for="nombredecuenta">Usuario</label>
+          <input type="text" id="nombredecuenta" name="nombredecuenta" required />
+        </div>
+        <div class="grupo">
+          <label for="contrasena">Contraseña</label>
+          <input type="password" id="contrasena" name="contrasena" required />
+        </div>
+        <input type="submit" value="Registrarse" id="boton-registro" />
+      </form>
+    </div>
+    <script src="assets\js\registro.js"></script> 
+  </body>
 </html>

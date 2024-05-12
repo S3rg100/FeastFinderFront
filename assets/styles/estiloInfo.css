@@ -1,0 +1,101 @@
+body{
+    background-color: white;
+}
+
+.contenedor{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 700px; /* Opcional: limita el ancho máximo */
+    height: 70vh; /* Usa vh para hacerlo relativo al tamaño de la ventana */
+    background-color: #C6C5CE;
+    border-radius: 10px; /* Borde redondeado */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra */
+}
+
+#principal, #texto1{
+    color: white;
+}
+
+#principal{
+    padding: 10px;
+    text-align: center;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    padding-top: 40px;
+}
+
+.mitad-izquierda {
+    color: white; /* Color para la mitad izquierda */
+    font: bold 14px;
+}
+  
+.mitad-derecha {
+    color: #ff6600; /* Color para la mitad derecha */
+    font: bold 14px;
+}
+
+#loginForm{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.input-icono {
+    position: relative;
+    margin-bottom: 20px; /* Ajusta la separación entre los campos */
+}
+
+.input-icono input {
+    padding-left: 40px; /* Ajusta el espacio a la izquierda del campo de entrada */
+}
+
+.input-icono i {
+    position: absolute;
+    left: 10px; /* Ajusta la posición del ícono a la izquierda */
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.input-icono label {
+    display: none; /* Oculta la etiqueta por defecto */
+}
+
+.texto{
+    border: 1px solid white;
+    border-radius: 10px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    padding: 10px 10px;
+    background-color:white;
+    color: black;
+}
+
+#botonI{
+    padding: 20px 20px;
+    background-color:#ff6600; /* Color naranja */
+    color: white;
+    text-decoration: none; /* Elimina el subrayado del enlace */
+    border: 1px solid white;
+    border-radius: 10px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+a{
+    position: fixed;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    display: inline-block;
+    padding: 10px 10px;
+    background-color:#ff6600; /* Color naranja */
+    color: white;
+    text-decoration: none; /* Elimina el subrayado del enlace */
+    border: 1px solid white;
+    border-radius: 10px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}

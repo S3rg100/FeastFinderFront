@@ -1,0 +1,73 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2;
+}
+
+.contenedor {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#titulo {
+    font-size: 24px;
+    color: #333;
+}
+
+.boton {
+    padding: 10px 20px;
+    background-color: #ff6600;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.boton:hover {
+    background-color: #ff4d00;
+}
+
+#reservas {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.reserva {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+}
+
+.reserva p {
+    margin: 5px 0;
+}
+
+.reserva-id {
+    font-weight: bold;
+}
+
+.reserva-restaurante {
+    color: #ff6600;
+}
+
+.reserva-hora {
+    font-style: italic;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid #ddd;
+    margin: 10px 0;
+}
