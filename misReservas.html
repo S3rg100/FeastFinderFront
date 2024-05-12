@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/estilosMisreservas.css">
+    <link rel="stylesheet" href="assets/styles/estilosMisreservas.css">
     <title>Tus reservas</title>
 </head>
 <body>
@@ -17,24 +17,7 @@
         </div>
     </div>
 
-    <script>
-        // Simulacion
-        const clienteReservas = [
-            { id: 1, restaurante: 'Cantina la 15', fecha: '2024-05-10', hora: '19:00' },
-            { id: 2, restaurante: 'Todo es color di Rosa', fecha: '2024-05-12', hora: '18:30' },
-            { id: 3, restaurante: 'Pizzardi Artigianale', fecha: '2024-05-15', hora: '20:15' }
-        ];
-
-        // Mostrar los detalles de las reservas
-        const detallesReservas = clienteReservas.map(reserva => {
-            return `<div class="reserva">
-                        <p class="reserva-id">Reserva ID: ${reserva.id}</p>
-                        <p class="reserva-restaurante">Restaurante: ${reserva.restaurante}</p>
-                        <p class="reserva-fecha">Fecha: ${reserva.fecha}</p>
-                        <p class="reserva-hora">Hora: ${reserva.hora}</p>
-                    </div>`;
-        }).join('');
-        document.getElementById('detallesReservas').innerHTML = detallesReservas;
-    </script>
+    <!-- Incluir el archivo JavaScript -->
+    <script src="assets/js/misReservas.js"></script>
 </body>
 </html>

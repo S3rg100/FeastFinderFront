@@ -32,7 +32,9 @@ document.getElementById("loginForm").addEventListener("submit", function(event) 
         if (data.token) {
             console.log("Respuesta del servidor:", data);
             localStorage.setItem('authToken', data.token);
-            window.location.href = './restaurantesList.html';
+            localStorage.setItem('nombredecuenta', datosusuario.nombredecuenta);
+            console.log(datosusuario.nombredecuenta);
+            window.location.href = './clientes.html';
         } else {
             throw new Error('No se recibió el token esperado.');
         }

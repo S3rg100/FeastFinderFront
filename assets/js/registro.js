@@ -18,7 +18,6 @@ document
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-       
       },
       body: JSON.stringify(usuarioRegistrado),
     };
@@ -27,13 +26,15 @@ document
 
     fetch(url, opciones)
       .then((response) => {
-        console.log(response); 
-        return response.json(); 
+        console.log(response);
+        return response.json();
       })
       .then((data) => {
-        console.log("Respuesta del servidor:", data); 
-        localStorage.setItem('authToken', data.token); 
-        window.location.href = './restaurantesList.html'; 
+        console.log("Respuesta del servidor:", data);
+        localStorage.setItem("authToken", data.token);
+        localStorage.setItem("nombredecuenta", datosusuario.nombredecuenta);
+        console.log(datosusuario.nombredecuenta);
+        window.location.href = "./clientes.html";
       })
       .catch((error) => {
         console.error("Error al enviar los datos:", error);
