@@ -35,19 +35,18 @@ document.addEventListener("DOMContentLoaded", function () {
     cargarInformacionUsuario(nombreDeCuenta);
 
     document.getElementById("hacerReserva").addEventListener("click", function () {
-        window.location.href = "hacerReserva.html"; // Cambia esta URL a la página deseada
+        window.location.href = "reserva.html"; 
     });
 
     document.getElementById("verReservas").addEventListener("click", function () {
-        window.location.href = "misReservas.html"; // Asegúrate de que el archivo está correctamente nombrado
+        window.location.href = "misReservas.html"; 
     });
 
     document.getElementById("ayuda").addEventListener("click", function () {
-        window.location.href = "ayuda.html"; // Cambia esta URL a la página de ayuda
+        window.location.href = "ayuda.html";
     });
 
     document.getElementById("salir").addEventListener("click", function () {
-        // Aquí puedes agregar lógica adicional, como cerrar una sesión
-        window.location.href = "index.html"; // O redirige a una página de inicio de sesión
+        window.location.href = "index.html"; 
     });
 });

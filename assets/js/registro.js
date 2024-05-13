@@ -32,8 +32,8 @@ document
       .then((data) => {
         console.log("Respuesta del servidor:", data);
         localStorage.setItem("authToken", data.token);
-        localStorage.setItem("nombredecuenta", datosusuario.nombredecuenta);
-        console.log(datosusuario.nombredecuenta);
+        localStorage.setItem("nombredecuenta", usuarioRegistrado.nombredecuenta);
+        console.log(usuarioRegistrado.nombredecuenta);
         window.location.href = "./clientes.html";
       })
       .catch((error) => {
