@@ -1,0 +1,21 @@
+{
+  "name": "cypress",
+  "version": "1.0.0",
+  "description": "cypress testing e2e",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "cypress:open":"cypress open"
+  },
+  "keywords": [
+    "e2e",
+    "framework",
+    "cypress",
+    "testing"
+  ],
+  "author": "Laura Mendieta",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^13.9.0"
+  }
+}
