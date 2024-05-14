@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/styles/estilosPqr.css">
+
     <title>Solicitud PQR</title>
 </head>
 <body>
@@ -12,34 +13,13 @@
             <h1 id="logo">Feast Finder</h1>
             <h2 id="titulo">¿Necesitas ayuda? ¡Estamos aquí para ayudarte!</h2>
         </header>
-        <form class="formulario" id="pqrForm" action="/guardar_pqr" method="post" onsubmit="return enviarPqr(event)">
-            <label for="correo">Correo electrónico:</label>
-            <input type="email" id="correo" name="correo" required><br><br>
-
+        <form class="formulario" id="pqrForm" action="clientes.html" method="get">
             <label for="pqr">Descripción del problema:</label>
             <textarea id="pqr" name="pqr" rows="4" required></textarea><br><br>
 
             <input type="submit" value="Enviar" id="enviar">
         </form>
     </div>
-    <script>
-        function enviarPqr(event) {
-            event.preventDefault(); // Evita que el formulario se envíe por defecto
-
-            // Obtiene los valores de los campos del formulario
-            const correo = document.getElementById('correo').value;
-            const pqr = document.getElementById('pqr').value;
-
-            if (correo && pqr) {
-                alert('Tu solicitud ha sido enviada satisfactoriamente. Nos pondremos en contacto contigo pronto.');
-                window.location.href = ".html";
-                return true; // Se envió el formulario y se redirige
-            } else {
-                // Si falta algún campo, muestra un mensaje de error
-                alert('Por favor, completa todos los campos.');
-                return false;
-            }
-        }
-    </script>
+    <script src="scripts.js"></script>
 </body>
 </html>
