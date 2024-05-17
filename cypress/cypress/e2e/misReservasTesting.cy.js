@@ -7,11 +7,10 @@ describe('Pruebas de inicio de sesión y reservas', () => {
         cy.get('#loginForm').submit();
     
         cy.url().should('include', '/clientes.html');
-  
-        // Busca el enlace "Ver Reservas" y hace clic en él
+        
+        cy.wait(4000); 
         cy.get('#verReservas').click();
-
-        // Verifica que se muestren las reservas después de hacer clic en "Ver Reservas"
+        
         cy.get('#detallesReservas').should('not.be.empty');
     });
 });

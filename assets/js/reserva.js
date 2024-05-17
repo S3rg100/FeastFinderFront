@@ -17,6 +17,7 @@ async function fetchRestauranteIdPorNombre(nombreRestaurante) {
                 Authorization: `Bearer ${authToken}`,
             },
         });
+        console.log(response.status);
         if (!response.ok) {
             throw new Error("Network response was not ok");
         }
@@ -37,17 +38,17 @@ function actualizarRestaurantes() {
   restaurantesSelect.innerHTML = "";
 
   if (ciudadSeleccionada === "Bogota") {
-    agregarRestaurante("Cantina la 15");
-    agregarRestaurante("Todo es color di Rosa");
-    agregarRestaurante("Pizzardi Artigianale");
+    agregarRestaurante("Cantina la 15", 2);
+    agregarRestaurante("Todo es color di Rosa", 10);
+    agregarRestaurante("Pizzardi Artigianale", 8);
   } else if (ciudadSeleccionada === "Medellin") {
-    agregarRestaurante("Kampanas cocinas del mundo");
-    agregarRestaurante("Maximo Marea Mediterraneo");
-    agregarRestaurante("La pampa parrilla envigado");
+    agregarRestaurante("Kampanas Cocinas del Mundo",4 );
+    agregarRestaurante("Maximo Marea Mediterraneo", 6);
+    agregarRestaurante("La Pampa Parrilla Envigado", 7);
   } else if (ciudadSeleccionada === "Cartagena") {
-    agregarRestaurante("Inkanto Prime Cartagena");
-    agregarRestaurante("Lucena Rooftop");
-    agregarRestaurante("San Nicolas Restaurante");
+    agregarRestaurante("Inkanto Prime", 3);
+    agregarRestaurante("Lucena Rooftop", 5);
+    agregarRestaurante("San Nicolas Restaurante", 9);
   } else {
     // If no city is selected, display a default message
     const option = document.createElement("option");
@@ -56,10 +57,11 @@ function actualizarRestaurantes() {
   }
 }
 
-function agregarRestaurante(nombreRestaurante) {
+function agregarRestaurante(nombreRestaurante, index) {
   const restaurantesSelect = document.getElementById("restaurantes");
   const option = document.createElement("option");
   option.text = nombreRestaurante;
+  option.value = index;
   restaurantesSelect.appendChild(option);
 }
 
@@ -80,12 +82,14 @@ function guardarReserva(event) {
 
       const datosReserva = {
         usuarioID: localStorage.getItem("usuarioId"),
-        restauranteID: restauranteId,
+        restauranteID: document.getElementById("restaurantes").value,
         fecha: document.getElementById("fecha").value,
         hora: document.getElementById("hora").value,
         estado: "C",
         descripcion: document.getElementById("recomendacion").value,
       };
+
+      console.log("Datos de la reserva:", datosReserva);
 
       if (
         datosReserva.usuarioID &&
@@ -94,7 +98,7 @@ function guardarReserva(event) {
         datosReserva.hora &&
         datosReserva.descripcion
       ) {
-        console.log("Datos de la reserva:", datosReserva);
+        
 
         fetch(url, {
           method: "POST",

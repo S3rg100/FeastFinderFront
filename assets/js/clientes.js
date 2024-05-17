@@ -5,14 +5,14 @@ function cargarInformacionUsuario(nombreDeCuenta) {
         console.error('Authentication token is missing.');
         return;
     }
-
+    console.log(authToken);
     fetch(url, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
             'Authorization': `Bearer ${authToken}`
         }
-    })
+    })  
     .then(response => {
         if (!response.ok) {
             throw new Error('Failed to fetch user details.');
@@ -34,19 +34,40 @@ document.addEventListener("DOMContentLoaded", function () {
     const nombreDeCuenta = localStorage.getItem('nombredecuenta');
     cargarInformacionUsuario(nombreDeCuenta);
 
-    document.getElementById("hacerReserva").addEventListener("click", function () {
-        window.location.href = "reserva.html"; 
-    });
+    const hacerReservaBtn = document.getElementById("hacerReserva");
+    const verReservasBtn = document.getElementById("verReservas");
+    const ayudaBtn = document.getElementById("ayuda");
+    const salirBtn = document.getElementById("salir");
 
-    document.getElementById("verReservas").addEventListener("click", function () {
-        window.location.href = "misReservas.html"; 
-    });
+    if (hacerReservaBtn) {
+        hacerReservaBtn.addEventListener("click", function () {
+            window.location.href = "reserva.html"; 
+        });
+    } else {
+        console.error("El botón 'hacerReserva' no existe en el DOM.");
+    }
 
-    document.getElementById("ayuda").addEventListener("click", function () {
-        window.location.href = "ayuda.html";
-    });
+    if (verReservasBtn) {
+        verReservasBtn.addEventListener("click", function () {
+            window.location.href = "misReservas.html"; 
+        });
+    } else {
+        console.error("El botón 'verReservas' no existe en el DOM.");
+    }
 
-    document.getElementById("salir").addEventListener("click", function () {
-        window.location.href = "index.html"; 
-    });
+    if (ayudaBtn) {
+        ayudaBtn.addEventListener("click", function () {
+            window.location.href = "ayuda.html";
+        });
+    } else {
+        console.error("El botón 'ayuda' no existe en el DOM.");
+    }
+
+    if (salirBtn) {
+        salirBtn.addEventListener("click", function () {
+            window.location.href = "index.html"; 
+        });
+    } else {
+        console.error("El botón 'salir' no existe en el DOM.");
+    }
 });
