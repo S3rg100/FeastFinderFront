@@ -39,7 +39,7 @@ function actualizarRestaurantes() {
 
   if (ciudadSeleccionada === "Bogota") {
     agregarRestaurante("Cantina la 15", 2);
-    agregarRestaurante("Todo es color di Rosa", 10);
+    agregarRestaurante("Todo es Color di Rosa", 10);
     agregarRestaurante("Pizzardi Artigianale", 8);
   } else if (ciudadSeleccionada === "Medellin") {
     agregarRestaurante("Kampanas Cocinas del Mundo",4 );
@@ -50,7 +50,7 @@ function actualizarRestaurantes() {
     agregarRestaurante("Lucena Rooftop", 5);
     agregarRestaurante("San Nicolas Restaurante", 9);
   } else {
-    // If no city is selected, display a default message
+    
     const option = document.createElement("option");
     option.text = "Selecciona una ciudad primero...";
     restaurantesSelect.appendChild(option);

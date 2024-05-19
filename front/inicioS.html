@@ -1,35 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/styles/estiloInfo.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/styles/estiloInfo.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
     <title>Inicio de sesión</title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="contenedor">
-        <h1 id="principal">
-            <span class="mitad-izquierda">Feast</span>
-            <span class="mitad-derecha">Finder</span>
-        </h1>
-        <form class="formulario" id="loginForm">
-          <div class="input-icono">
-              <i class="fas fa-user"></i>
-              <input type="text" id="username" class="texto" name="username" placeholder="Usuario" required>
-              <label for="username">Nombre de usuario</label>
-          </div>
-          <div class="input-icono">
-              <i class="fas fa-lock"></i>
-              <input type="password" id="password" class="texto" name="password" placeholder="Contraseña" required>
-              <label for="password">Contraseña</label>
-          </div>
-          <input type="submit" id="botonI" value="Iniciar sesión">
-        </form>
-        <div id="boton1">
-            <a href="registro.html" type="boton" class="boton">Registrarse <i class="fas fa-user-plus"></i></a>
+      <h1 id="principal">
+        <span class="mitad-izquierda">Feast</span>
+        <span class="mitad-derecha">Finder</span>
+      </h1>
+      <form class="formulario" id="loginForm">
+        <div class="input-icono">
+          <i class="fas fa-user"></i>
+          <input
+            type="text"
+            id="username"
+            class="texto"
+            name="username"
+            placeholder="Usuario"
+            required
+          />
+          <label for="username">Nombre de usuario</label>
         </div>
+        <div class="input-icono">
+          <i class="fas fa-lock"></i>
+          <input
+            type="password"
+            id="password"
+            class="texto"
+            name="password"
+            placeholder="Contraseña"
+            required
+          />
+          <label for="password">Contraseña</label>
+        </div>
+        <input type="submit" id="botonI" value="Iniciar sesión" />
+      </form>
+      <div id="boton1">
+        <a href="registro.html" type="boton" class="boton"
+          >Registrarse <i class="fas fa-user-plus"></i
+        ></a>
+      </div>
     </div>
     <script src="/front/assets/js/inicio.js"></script>
-</body>
+  </body>
 </html>
